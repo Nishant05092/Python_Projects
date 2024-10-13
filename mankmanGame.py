@@ -1,6 +1,6 @@
 import random
 
-words = ("apple","orange","banana","chiku","pear")
+words = ("apple","orange","chiku","pear",'banana', 'grapes',  'cherry', 'berry', 'watermelon', 'strawberries','avacado','mango', 'papaya','peach', 'plum','dates')
 
 word_art = {
    0 : ("   ",
