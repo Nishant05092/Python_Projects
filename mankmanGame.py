@@ -69,6 +69,7 @@ def main():
      if wrong_guess == 6:
          display_man(wrong_guess)
          print("you lose the game")
+         print(f"Correct word is: {answer}")
          is_running = False
      if "_" not in hint:
          display_hint(hint)
