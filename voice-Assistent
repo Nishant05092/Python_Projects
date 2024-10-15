@@ -3,8 +3,9 @@ import speech_recognition as sr
 import wikipedia
 import webbrowser
 import os
+import pyjokes
 
-# Initialize pyttsx
+
 engine = pyttsx3.init("sapi5")
 voices = engine.getProperty("voices")
 engine.setProperty('voice', voices[0].id)
@@ -36,11 +37,11 @@ if __name__ == '__main__':
 
     while True:
         query = take_command().lower()
-        if 'wikipedia' in query:
-            speak("Searching Wikipedia ...")
+        if 'according to you' in query:
+            speak("Searching ...")
             query = query.replace("wikipedia", '')
             results = wikipedia.summary(query, sentences=2)
-            speak("According to Wikipedia")
+            speak("According to my information")
             speak(results)
         elif 'open youtube' in query:
             speak("Opening YouTube")
@@ -49,9 +50,10 @@ if __name__ == '__main__':
             speak("Opening Google")
             webbrowser.open("google.com")
        
-        elif 'play my favorite song' in query:  # New command for a specific song
+        elif 'play my favourite song' in query:  
             speak("Playing your favorite song")
-            webbrowser.open("https://www.youtube.com/watch?v=VdyBtGaspss")  # Replace with the actual song link
+
+            webbrowser.open("youtube.com/watch?v=VdyBtGaspss") 
         elif 'open github' in query:
             speak("Opening GitHub")
             webbrowser.open("github.com")
@@ -83,6 +85,10 @@ if __name__ == '__main__':
         elif 'local disk e' in query:
             speak("Opening local disk E")
             webbrowser.open("E://")
+        elif 'tell me a joke' in query:
+            joke = pyjokes.get_joke()
+            speak(joke)  
+              
         elif 'sleep' in query:
-            speak("Goodbye!")
+            speak("Goodbye sir take care of you")
             exit(0)
